@@ -112,6 +112,11 @@ Find elements based on the attributes it has. or a value of an attribute
     background-color: yellow;
 }
 
+/* any input element with type attribute that has value of text */
+input[type="text"] {
+    background-color: yellow;
+}
+
 /* the first of the given selector */
 input:first-of-type {
     background-color: yellow;
@@ -195,11 +200,24 @@ use `>` to target only one level of nesting. A direct decendent.
 
 ## Styling Text
 
-fonts - 
+### Font Family
 
-google fonts
+use font-family to set the fonts.  
 
-font-size
+google fonts (fonts.google.com) - Roboto as an example
+
+<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+use the star `*` to apply it to the whole page.
+
+```
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+```
+
+font-size - sets the font size.
 
 ## Styling Boxes
 
@@ -215,6 +233,33 @@ adds space inside to move content in away from the edges
 
 ### Margin
 push content away from the edges on the outside
+
+### Border
+
+Width, Style, Color of the border.
+
+border-width  
+border-style (required)  
+border-color  
+
+```css
+border: width style color;
+```
+
+example:
+
+```css
+border: 5px solid red;
+```
+
+You can also define borders for specific sides individually.
+
+```css
+border-left: 5px solid red;
+border-right: 5px solid red;
+border-top: 5px solid red;
+border-bottom: 5px solid red;
+```
 
 ### Display
 
