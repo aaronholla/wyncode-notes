@@ -63,7 +63,7 @@ use id and classes to target specific elements
 tag uses the tag so `a` would use uses `a{}`  
 id uses `#`  
 class uses `.`  
-universal uses `*` 
+universal uses `*` - select everything. All the tags!
 - commonly used for fonts
 
 ## Pseudo Selectors
