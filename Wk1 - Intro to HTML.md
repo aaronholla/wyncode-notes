@@ -28,8 +28,11 @@ The tag has attributes. In the below code the href is an attribute of the a tag 
 <a href="https://www.wyncode.co">Wyncode</a>
 ```
 
+Depending on the tag an element will display inline or block by defualt.
 
-There are block level elements that force loading a new line create a new block and inline elements that by default will be rendered inside.
+Inline elements render left to right next to each other (on the same line).
+
+Block elements render vertically on top of each other. They display on new lines and they cause the next element to display on a new line.
 
 ## Boilerplate
 This is the most basic html to get a valid html5 document
