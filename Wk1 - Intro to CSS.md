@@ -8,6 +8,9 @@ Tells the browser how elements should look on the screen. Lets you modify specif
 
 Each browser has default styles that it sets for elements.
 
+## Flexbox
+
+> Use Spans to group inline elements. This will help to group for spacing using flexbox.
 
 ## CSS Grid
 
@@ -37,6 +40,9 @@ new. css grid. Later we will go over css grid.
     width: 100%;
 }
 ```
+
+Grid template Columns - set the columns names and widths for the grid.
+1fr - fraction of the remaining space
 
 ## Seperation of Concerns
 A software design pricinple.
