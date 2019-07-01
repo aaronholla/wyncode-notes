@@ -2,6 +2,17 @@
 
 The only programming language that runs in the browser. It is strictly typed, has to be syntaxly correct.
 
+## `this` keyword
+
+It has different values depending on where it is used:
+
+- In a method, this refers to the owner object.  
+- Alone, this refers to the global object.  
+- In a function, this refers to the global object.  
+- In a function, in strict mode, this is undefined.  
+- In an event, this refers to the element that received the event.  
+- Methods like call(), and apply() can refer this to any object.
+
 ## MATH
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math
@@ -126,8 +137,39 @@ function sumOf(num1, num2){
 const answer1 = sumOf(12, 10)
 ```
 
+### Recursive Function
+> Any function that calls itself is called a Recursive Function.
+
+### Callback Function
+A function that accepts another function as a param for the function.
+
+### Factory Function
+Factory functions are any function that take input and returns an object.
+
+```js
+cosnt createUser = (name, username, password) => ({
+    name: name,
+    username: username,
+    password: password,
+    isActive: true
+})
+```
+
+You can also leave off the value if the variable is the same as the key.
+
+```js
+cosnt createUser = (name, username, password) => ({
+    name,
+    username,
+    password,
+    isActive: true
+})
+```
+
 ## Spread Operators `ES6`
- Lets you output the values of arrays and shovel them where you need them.
+ Lets you output the values of an object and shovel them where you need them.
+
+ > Overwriting keys
 
 ```js
 
@@ -138,6 +180,22 @@ function sumOf(num1, num2) {
 const nums = [3,4]
 
 const answer = sumOf(...nums)
+```
+
+You can merge objects together using the spread operator.
+
+```js
+let aaronBasic = {
+    name: 'Aaron',
+    age: 26
+}
+
+let aaronDetailed = {
+    city: 'Wynwood',
+    job: 'student'
+}
+
+const aaronComplete = {...aaronBasic, ...aaronDetailed}
 ```
 
 ## Rest Parameters `ES6`
@@ -230,7 +288,25 @@ for (let i = 0; i < dogs.length; i++) {
 }
 ```
 
+### For Each Loops
+
+Does not return anything. Good for when you want to just do something with each item in an array or object.
+
+```js
+// ES5
+users.forEach(function(user){
+    console.log(`My name is ${user.name}!`)
+})
+
+// ES6
+users.forEach(user => (
+    console.log(`My name is ${user.name}`)
+))
+```
+
+
 ### For In Loops
+Great for objects so you may not have to use dot notation inside the loop.
 
 ```js
 const teams = {
@@ -385,6 +461,12 @@ A way to insert variables into a string template literal.
 console.log(`Hello, ${name}. How are you today?`)
 ```
 
+Can also use concatenation with iterpolation:
+
+```js
+console.log(`Hello, ${name}.`+`How are you today?`)
+```
+
 
 ### Number
 
@@ -468,6 +550,88 @@ Objects are complex datatypes. There are different types of objects.
     // { NewYork: "Giants", Miami: "Dolphins" }
     teams.Miami
     // "Dolphins"
+```
+
+> Objects can have functions as a value. These are methods. 
+
+Properties are static.  
+Methods are dynamic or a function you can call.
+
+#### Arrays
+A type of object that uses string representations of zero index.
+
+```js
+const myArray = ['Giants', 'Dolphins']
+```
+
+##### Methods
+
+`push` - add to end of array  
+`unshift` - put at begining of array  
+`pop` - get rid of last item of array  
+`shift` - get rid of first item of array  
+`slice` - remove items from array `|does not mutate original array`  
+`sort` - order alphebetically
+> Sorting numbers only sorts by the first digit only. To sort based on the entire number you have to pass sort a function
+```js
+[5, 127, 42].sort((a,b) => a - b)
+```
+`forEach` - accepts a function that will run for each item of the array  
+*`map` - apply a transformation on each item in an array. `|does not mutate original array`
+```js
+const numbers = [1,2,3,4,5]
+const perfectSquares = numbers.map(number => number * number)
+```
+*`filter` - pull out only items that match the function passed. Calls function on each item, keeps any items that return true.  `|does not mutate original array`
+```js
+const confusedStudents = students.filter(student => student.mood === 'confused')
+```
+`reduce` - running totals - 
+```js
+const nums = [15, 23, 45, 67, 23]
+
+const total = nums.reduce((runningTotal, index) => (
+    runningTotal += index
+))
+console.log(total)
+```
+
+>`*` Map and Filter are very powerful especially used together.
+
+
+#### Object Keys
+```js
+console.log(Object.keys(animalSounds));
+```
+#### Object Values
+```js
+console.log(Object.values(animalSounds));
+```
+
+#### Object Destructuring `ES6`
+
+```js
+const person = {
+    name: "aaron",
+    age: 26,
+    hairColor: "black"
+}
+
+// ES5
+const name = person.name
+const age = person.age
+const hairColor = person.hairColor
+
+// ES6
+const {name, age, hairColor} = person
+
+```
+
+You can rename the variables by providing a new name with `:` then the name.
+
+```js
+const {name: personName, age: personAge, hairColor} = person
+console.log(personName, personAge)
 ```
 
 ### Symbol
@@ -599,6 +763,11 @@ catch(error) {
 ```
 
 ## MANIPULATE THE DOM WITH JS
+
+
+`document.querySelector` - get first element with tag
+`document.querySelectorAll` - get all with tag
+
 1) Use HTML and CSS to represent the initial state of the page
 
 > Apply just enough styling to get the initial state where we want.
