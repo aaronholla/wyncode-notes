@@ -28,7 +28,7 @@ nslookup google.com
 
 ### Port
 
-Each devise (server and client) has many ports (63k something)
+Each device (server and client) has many ports (63k something)
 
 Default port for http 80; https (443)?
 
