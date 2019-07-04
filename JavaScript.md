@@ -137,6 +137,21 @@ function sumOf(num1, num2){
 const answer1 = sumOf(12, 10)
 ```
 
+### Param Destructuring
+
+instead of:
+```js
+.then((response.data) => {
+    console.log(data);
+})
+```
+you can use:
+```js
+.then(({data}) => {
+    console.log(data);
+})
+```
+
 ### Recursive Function
 > Any function that calls itself is called a Recursive Function.
 
