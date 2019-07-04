@@ -1,6 +1,6 @@
 # Intro to the Internet
 
-What are the underlying things that happen when you make a request.
+What are the underlying things that happen when you make a request. Strings are the only thing you can send over the internet. Different protocals are just ways of interpreting the string that is sent.
 
 ## How it works
 
@@ -8,6 +8,22 @@ Alan Turing - Turing tape... Binary zeros and ones
 
 `Client` - Requests information  
 `Server` - Responds with information
+
+Clients make requests to the server and servers send back a response.
+
+## Clients
+
+Clients send headers with each request. A request has different parts.
+
+1. Physical Address - IP address / endpoint / url  
+2. Headers - default values that can also be changes, just extra information  
+3. Payload (parameters) - most commonly query params in the url 
+
+use `Object.keys` to get the keys in the response. Makes it easier to understand what the server is sending back.
+
+## Servers
+
+Servers can use clients inside of them also. 
 
 ### IP Address
 Every device has IP address
@@ -155,6 +171,18 @@ key=value;
 scheme://domain:port/path?foo=bar#fragment_id
 
 http://google.com:80/search?q=howtocode#sponsored
+
+You can only have one question mark. For special characters you have to encode them to get special charaters.
+
+https://www.url-encode-decode.com
+
+
+ You can escape querystrings in javascript use the build in library querystring
+```js
+const querystring = require('querystring')
+
+console.log(querystring.escape('y8uE?3c829{^q$h+3*2akd[]=>6B97'))
+```
 
 ### Protocals or Scheme
 
