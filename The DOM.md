@@ -45,8 +45,17 @@ img.alt = "Puppy"
 let img = document.createElement('img')
 ```
 
-## Connecting Dom nodes
+## Removing Dom nodes
+You can use the `removeChild` method to remove a node element from the page.
 
+```js
+const chatbox = document.getElementById("chatbox")
+const message = document.getElementById("1")
+chatbox.removeChild(message)
+```
+
+## Connecting Dom nodes
+You can use the `appendChild` method to add a node element to the bottom of another element.
 ```js
 let header = document.createElement("header");
 let main = document.getElementById("main-element") 
