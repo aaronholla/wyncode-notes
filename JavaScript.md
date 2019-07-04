@@ -152,6 +152,21 @@ you can use:
 })
 ```
 
+### Rest Perameters
+Allows you to pass in an infinite number of arguments into a function. The argument will represent an infinite number of arguments as an array.
+
+```js
+// the args will be an array of all the arguments passed in
+const restParams = (...args) => {
+    return args.map(arg => arg + 1)
+}
+
+// you can also use it to just get all remaining arguments.
+function f(a, b, ...theArgs) {
+  // theArgs will be an array of all the arguments past the first two.
+}
+```
+
 ### Recursive Function
 > Any function that calls itself is called a Recursive Function.
 
