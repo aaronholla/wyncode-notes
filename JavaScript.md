@@ -612,6 +612,7 @@ const myArray = ['Giants', 'Dolphins']
 const numbers = [1,2,3,4,5]
 const perfectSquares = numbers.map(number => number * number)
 ```
+`every` - will return a boolean if every item matches the function passed in.  
 *`filter` - pull out only items that match the function passed. Calls function on each item, keeps any items that return true.  `|does not mutate original array`
 ```js
 const confusedStudents = students.filter(student => student.mood === 'confused')
