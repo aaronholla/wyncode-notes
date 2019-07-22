@@ -8,6 +8,34 @@ Tells the browser how elements should look on the screen. Lets you modify specif
 
 Each browser has default styles that it sets for elements.
 
+## Keyframes
+
+A way to add animations to an element in css. 
+
+```css
+.person:hover {
+  animation: beatingHeart 1s infinite;
+}
+
+@keyframes beatingHeart {
+  0% {
+    transform: scale(1.0);
+  }
+  25% {
+    transform: scale(1.02);
+  }
+  50% {
+    transform: scale(1.0);
+  }
+  75% {
+    transform: scale(1.04);
+  }
+  100% {
+    transform: scale(1.0);
+  }
+}
+```
+
 ## Flexbox
 
 > Use Spans to group inline elements. This will help to group for spacing using flexbox.
@@ -72,8 +100,7 @@ class uses `.`
 universal uses `*` - select everything. All the tags!
 - commonly used for fonts
 
-## Pseudo Selectors
-Access lifecycles of elements instead of just selecting the actual element.
+## Pseudo Elements
 
 > pseudo class use `:` pseudo elements use `::` 
 
@@ -90,7 +117,16 @@ blockquote::before{
 blockquote::after{
     content: close-quote;
 }
+
+/* Hide the text selection */
+#box::selection{
+    background: transparent;
+}
 ```
+
+## Pseudo Selectors
+
+Access lifecycles of elements instead of just selecting the actual element.
 
 Link Pseudo Selectors
 ```css
