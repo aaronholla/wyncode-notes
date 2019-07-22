@@ -65,7 +65,7 @@ Body - Payload of the request - Contains the html document
 
 Caching - save copy of websites to the browser so it will load faster the next time. Store version of page in the browser, the website can deside how long to cache. As a server you would rather load from cache then load from the server.
 
-### HTTP status codes
+### Status Codes
 
 
 developer.mozilla.org/en-US/docs/Web/HTTP/Status
@@ -84,7 +84,8 @@ All status codes have a specific meaning.Some common status codes:
 403  
 404 Not found  
 405  
-409 Conflict
+409 Conflict  
+422 Unprocessable Entity  
 500
 502
 503
@@ -93,7 +94,7 @@ All status codes have a specific meaning.Some common status codes:
 
 > Any code in a 500 is bad. Generally the higher the code the worse it is.
 
-### HTTP Response Types
+### Response Types
 
 There are different types of http requests. 
 
@@ -107,7 +108,7 @@ json - json formater extension for chrome.
 xml - less popular
 
 
-### HTTP METHODS
+### METHODS
 
 #### GET
 Ask server for information or a page (this is how curl requests a page)
